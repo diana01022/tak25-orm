@@ -8,9 +8,15 @@
 ## {{ ucfirst($day) }}
 
 @foreach($events as $event)
+### {{ $event['nameEt'] ?? $event['nameRu'] ?? 'Lesson' }}
+
 **{{ $event['timeStart'] }} - {{ $event['timeEnd'] ?? '' }}**
 
-{{ $event['nameEt'] ?? $event['nameRu'] ?? 'Lesson' }}
+**Teacher:** {{ $event['teachers'][0]['name'] ?? 'Not specified' }}
+
+**Room:** {{ $event['rooms'][0]['roomCode'] ?? 'Not specified' }}
+
+**Group:** {{ $event['studentGroups'][0]['code'] ?? 'Not specified' }}
 
 @endforeach
 

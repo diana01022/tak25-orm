@@ -37,7 +37,7 @@ class TimetableNotification extends Command
                 return Carbon::parse($event['date'])->locale('et_EE')->dayName;
             });
 
-        Mail::to('YOUR_EMAIL@example.com')->send(
+        Mail::to('dianaboguckaa8@gmail.com')->send(
             new Timetable($timetableEvents, $startDate, $endDate)
         );
     }
